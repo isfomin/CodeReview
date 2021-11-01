@@ -23,11 +23,13 @@ fun total(items: List<Int>): Float {
     var copyItems = items.toList()
     var total = 0f
 
-    do {
-        groupingCart.add(sizeGroup)
-        copyItems = sliceItems(copyItems)
-        sizeGroup = sizeGroup(copyItems)
-    } while (sizeGroup > 0)
+    if (sizeGroup > 0) {
+        do {
+            groupingCart.add(sizeGroup)
+            copyItems = sliceItems(copyItems)
+            sizeGroup = sizeGroup(copyItems)
+        } while (sizeGroup > 0)
+    }
 
     groupingCart.forEach {
         if (it in discount.keys) {
