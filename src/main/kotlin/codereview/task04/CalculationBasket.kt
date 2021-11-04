@@ -46,7 +46,7 @@ fun total(items: List<Int>): Float {
     possibleGroupsItems.entries.forEach {
         totals.add(totalOfOneGroup(it.value))
     }
-    return totals.minOrNull() ?: -1F
+    return totals.minOrNull() ?: -1f
 }
 
 /**
